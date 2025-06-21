@@ -38,12 +38,31 @@ const FamilyMessagesSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim()) {
-      const { data, error } = await supabase
+      // First try to find an exact match
+      let { data, error } = await supabase
         .from('family_messages')
         .select('*')
-        .eq('name', name.toLowerCase().trim())
+        .eq('name', name.trim())
         .eq('is_active', true)
         .single();
+
+      // If no exact match, try case-insensitive search
+      if (error) {
+        const { data: allMessages } = await supabase
+          .from('family_messages')
+          .select('*')
+          .eq('is_active', true);
+
+        if (allMessages) {
+          const foundMessage = allMessages.find(msg => 
+            msg.name.toLowerCase() === name.toLowerCase().trim()
+          );
+          if (foundMessage) {
+            data = foundMessage;
+            error = null;
+          }
+        }
+      }
 
       if (!error && data) {
         setMessage(data);
