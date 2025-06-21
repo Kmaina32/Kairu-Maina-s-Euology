@@ -9,7 +9,195 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      biography_content: {
+        Row: {
+          content: string | null
+          created_at: string | null
+          id: string
+          is_published: boolean | null
+          order_index: number | null
+          section_type: string
+          title: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string | null
+          id?: string
+          is_published?: boolean | null
+          order_index?: number | null
+          section_type: string
+          title?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          content?: string | null
+          created_at?: string | null
+          id?: string
+          is_published?: boolean | null
+          order_index?: number | null
+          section_type?: string
+          title?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      family_messages: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_active: boolean | null
+          media_url: string | null
+          message: string
+          message_type: string | null
+          name: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          media_url?: string | null
+          message: string
+          message_type?: string | null
+          name: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          media_url?: string | null
+          message?: string
+          message_type?: string | null
+          name?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      guestbook_entries: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          id: string
+          is_approved: boolean | null
+          message: string
+          visitor_name: string
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          is_approved?: boolean | null
+          message: string
+          visitor_name: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          is_approved?: boolean | null
+          message?: string
+          visitor_name?: string
+        }
+        Relationships: []
+      }
+      media_gallery: {
+        Row: {
+          album: string | null
+          created_at: string | null
+          description: string | null
+          file_type: string
+          file_url: string
+          id: string
+          is_published: boolean | null
+          order_index: number | null
+          title: string | null
+          year: number | null
+        }
+        Insert: {
+          album?: string | null
+          created_at?: string | null
+          description?: string | null
+          file_type: string
+          file_url: string
+          id?: string
+          is_published?: boolean | null
+          order_index?: number | null
+          title?: string | null
+          year?: number | null
+        }
+        Update: {
+          album?: string | null
+          created_at?: string | null
+          description?: string | null
+          file_type?: string
+          file_url?: string
+          id?: string
+          is_published?: boolean | null
+          order_index?: number | null
+          title?: string | null
+          year?: number | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          role: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id: string
+          role?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+        }
+        Relationships: []
+      }
+      will_wishes: {
+        Row: {
+          access_password: string | null
+          content: string | null
+          created_at: string | null
+          file_url: string | null
+          id: string
+          is_published: boolean | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          access_password?: string | null
+          content?: string | null
+          created_at?: string | null
+          file_url?: string | null
+          id?: string
+          is_published?: boolean | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          access_password?: string | null
+          content?: string | null
+          created_at?: string | null
+          file_url?: string | null
+          id?: string
+          is_published?: boolean | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

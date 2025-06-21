@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import BiographySection from '@/components/BiographySection';
 import GallerySection from '@/components/GallerySection';
 import FamilyMessagesSection from '@/components/FamilyMessagesSection';
+import GuestbookSection from '@/components/GuestbookSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
       <BiographySection />
       <GallerySection />
       <FamilyMessagesSection />
+      <GuestbookSection />
       <Footer />
     </div>
   );
