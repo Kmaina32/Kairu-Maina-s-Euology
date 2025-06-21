@@ -6,10 +6,11 @@ import GallerySection from '@/components/GallerySection';
 import FamilyMessagesSection from '@/components/FamilyMessagesSection';
 import GuestbookSection from '@/components/GuestbookSection';
 import Footer from '@/components/Footer';
+import MusicPlayer from '@/components/MusicPlayer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Header />
       <HeroSection />
       <BiographySection />
@@ -17,6 +18,7 @@ const Index = () => {
       <FamilyMessagesSection />
       <GuestbookSection />
       <Footer />
+      <MusicPlayer />
     </div>
   );
 };
