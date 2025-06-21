@@ -74,6 +74,16 @@ const Header = () => {
                   <item.icon className="h-4 w-4" />
                   <span>{item.name}</span>
                 </a>)}
+              {!loading && (user ? <a href="/admin" className="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-colors py-2">
+                    <Settings className="h-4 w-4" />
+                    <span>Admin</span>
+                  </a> : <button onClick={() => {
+                    setShowAuthModal(true);
+                    setIsMenuOpen(false);
+                  }} className="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-colors py-2">
+                    <Settings className="h-4 w-4" />
+                    <span>Admin</span>
+                  </button>)}
             </nav>}
         </div>
       </header>
