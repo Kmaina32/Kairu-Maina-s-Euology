@@ -155,7 +155,7 @@ const WillManager = () => {
         <CardHeader>
           <CardTitle>Content Management</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+      <CardContent className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-2">Title</label>
             <Input
@@ -204,20 +204,22 @@ const WillManager = () => {
               style={{ display: 'none' }}
               id="will-file-upload"
             />
-            <Button 
-              variant="outline"
-              onClick={() => document.getElementById('will-file-upload')?.click()}
-              disabled={uploading}
-            >
-              <Upload className="h-4 w-4 mr-2" />
-              {uploading ? 'Uploading...' : 'Upload Document'}
-            </Button>
+            <div className="flex flex-wrap gap-2">
+              <Button 
+                variant="outline"
+                onClick={() => document.getElementById('will-file-upload')?.click()}
+                disabled={uploading}
+                className="flex-shrink-0"
+              >
+                <Upload className="h-4 w-4 mr-2" />
+                {uploading ? 'Uploading...' : 'Upload Document'}
+              </Button>
+              <Button onClick={handleSave} className="flex-shrink-0">
+                <Save className="h-4 w-4 mr-2" />
+                Save Changes
+              </Button>
+            </div>
           </div>
-
-          <Button onClick={handleSave}>
-            <Save className="h-4 w-4 mr-2" />
-            Save Changes
-          </Button>
         </CardContent>
       </Card>
 
