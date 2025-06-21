@@ -1,5 +1,5 @@
 services:
-  - type: static
+  - type: static_site
     name: vite-react-shadcn-ts
     env: node
     branch: main
