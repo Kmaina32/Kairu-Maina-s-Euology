@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: vite-react-shadcn-ts
+    env: node
+    branch: main
+    buildCommand: npm run build
+    publishDirectory: dist
